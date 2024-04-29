@@ -10,14 +10,14 @@ class ListsController < ApplicationController
 
   def show
   @list = List.find(params[:id])
-  
- 
+
+
   end
 
   def index
     @list = List.new
     @lists = List.all
-    
+
   end
 
   def edit
