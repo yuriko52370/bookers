@@ -1,3 +1,12 @@
+<% if @book.errors.any? %>
+<%= @book.errors.count %>errors pronibited this from being saved:
+<ul>
+  <%@book.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <h1>Books</h1>
 <table>
   <thead><tr>
@@ -9,7 +18,7 @@
       <td><%= book.body %></td>
       <td><%= link_to 'Show', book %></td>
       <td><%= link_to 'Edit', edit_book_path(book) %></td>
-      <td><%= link_to 'Destroy', book_path(book.id), method: :delete, "deta-confirm" => "Are you sure?" %></td>
+      <td><%= link_to 'Destroy', book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
     </tr>
    <% end %>
   </tbody>
