@@ -1,11 +1,4 @@
-<% if @book.errors.any? %>
-<%= @book.errors.count %>errors pronibited this from being saved:
-<ul>
-  <% @book.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-  <% end %>
-</ul>
-<% end %>
+
 
 <h1>Books</h1>
 <table>
@@ -24,7 +17,14 @@
   </tbody>
 </table>
 
-
+<% if @book.errors.any? %>
+<%= @book.errors.count %>errors pronibited this from being saved:
+<ul>
+  <% @book.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
 
 <h2>New Book</h2>
 <%= form_with model: @book do |f| %>
